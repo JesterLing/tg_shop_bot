@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "jsx": "react"
+  },
+  "includes": [
+    "./react-app/externals.d.ts"
+  ],
+  "include": [
+    "react-app/"
+  ]
+}

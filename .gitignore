@@ -1,0 +1,15 @@
+.vscode
+/config.php
+/ToDo.txt
+
+ssl/
+
+server/vendor/
+server/*.log
+
+public/dist/
+public/Download/
+public/Upload/
+
+client/node_modules/
+client/gh-pages/

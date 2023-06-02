@@ -1,0 +1,15 @@
+IndexOptions +Charset=UTF-8
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+RedirectMatch 403 ^/upload/?$
+RedirectMatch 403 ^/download/?$
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
