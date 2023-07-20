@@ -1,0 +1,45 @@
+@import '../../Custom-varibles.less';
+
+body.dark {
+    .nestable {
+        .nestable-list {
+            .nestable-item {
+                background-color: @background-color-dark-second;
+            }
+        }
+    }
+}
+.nestable-drag-layer > .nestable-list {
+    .item div:last-child {
+        display: none;
+    }
+}
+.nestable {
+    margin-top: 20px;
+    .nestable-list {
+        padding: 0 0 10px 20px;
+        .nestable-item {
+            background-color: @background-color-light-second;
+            border:1px solid #1D6486;
+            .nestable-item-name {
+                padding: 12px 16px;
+            }
+            .item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+            }
+            cursor: move;
+            &.is-dragging {
+                border: 0px;
+
+                &::before {
+                    background: #D0D0D0;
+                    border: 1px dashed #2E2E2E;
+                    
+                }
+            }
+        }
+    }
+}

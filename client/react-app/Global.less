@@ -1,0 +1,69 @@
+@import './Custom-varibles.less';
+@import 'petal.less/less/petal.less';
+
+body.dark {
+  background-color: @background-color-dark-second;
+  color: @base-font-color-dark;
+
+  .warp {
+    .content-pane {
+      background-color: @background-color-dark;
+      border: 0;
+    }
+  }
+}
+
+.header {
+  .chk-switch-wrap {
+    margin-right: 20px;
+
+    .chk-switch-label {
+      margin-right: 5px;
+    }
+  }
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+#app > div {
+  min-height: 100%;
+}
+
+.mw-300 {
+  max-width: 300px;
+}
+
+.warp {
+  padding-top: 60px; // 60px header
+  min-height: calc(100vh - 50px); // 50px footer
+
+  .content-pane {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-right: 2px solid @background-color-light-second;
+    border-left: 2px solid @background-color-light-second;
+  }
+}
+
+table {
+  // normalize
+  font-size: @base-font-size;
+}
+
+// FIXES
+
+.btn .petalicon {
+  line-height: 0.7;
+}
+
+.nestable-icon {
+  width: 20px !important;
+  height: 10px !important;
+  &:before {
+    content: none !important;
+  }
+}

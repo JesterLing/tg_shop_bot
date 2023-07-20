@@ -1,0 +1,62 @@
+@import '../../Custom-varibles.less';
+
+:global(body.dark) .row .panel {
+    &.green {
+        background: linear-gradient(to bottom right, #9DB759, #556330);
+    }
+    &.blue {
+        background: linear-gradient(to bottom right, #2A91C2, #174E69);
+    }
+    &.orange {
+        background: linear-gradient(to bottom right, #DD974E, #75422E);
+    }
+    &.violet {
+        background: linear-gradient(to bottom right, #564257, #2F242F);
+    }
+}
+
+.row {
+    margin: 10px 0;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    .panel {
+        flex: 1;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+
+        &.green {
+            background: linear-gradient(to bottom right, #C7DC8F, #EAF2D4);
+        }
+        &.blue {
+            background: linear-gradient(to bottom right, #69BDE6, #C5E6F5);
+        }
+        &.orange {
+            background: linear-gradient(to bottom right, #FBC286, #FCDED3);
+        }
+        &.violet {
+            background: linear-gradient(to bottom right, #8D7C8E, #D3CDD4);
+        }
+
+        @media screen and (max-width: @container-width) {
+            & {
+              flex-basis: 35%;
+            }
+        }
+        span {
+            font-size: 2rem;
+            display: block;
+        }
+        svg {
+            color:#000;
+            position: absolute;
+            right:-2rem;
+            bottom:-2rem;
+            width: 7rem;
+            opacity: 0.1;
+        }
+    }
+}

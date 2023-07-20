@@ -1,0 +1,25 @@
+@import '../../Custom-varibles.less';
+
+.upload {
+    position: relative;
+    
+    .preview {
+        width:140px;
+        height:140px;
+        border:1px dashed @background-color-dark-second;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .control {
+        position: absolute;
+        left: 150px;
+        bottom: 58px;
+    }
+}
+
+:global(body.dark) .upload {
+    .preview {
+        border:1px dashed @background-color-light-second;
+    }
+}

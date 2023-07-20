@@ -1,0 +1,203 @@
+@import '../../Custom-varibles.less';
+
+
+.mainNav {
+    margin-right: auto;
+
+    .mabileMainNav {
+        display: none;
+    }
+
+    ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 10px 0 0;
+            padding: 0;
+
+            a {
+                display: block;
+                padding: 0 10px;
+                line-height: 40px;
+                font-size: .9em;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #999;
+                text-decoration: none;
+
+                &.active {
+                    color: @red;
+
+                    &:hover {
+                        color: @red;
+                    }
+                }
+
+                &:hover {
+                    color: @foreground-color-light;
+                }
+            }
+        }
+    }
+}
+
+:global(.nav-pane) {
+    background-color: @background-color-light-second;
+
+    .sideNav {
+        padding: 30px 0 30px 20px;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+
+        .sideNavHeader {
+            font-size: .9em;
+        }
+
+        ul {
+            padding: 0;
+            margin: 10px 0 30px;
+            width: 100%;
+
+            li {
+                list-style: none;
+                margin: 5px 0px;
+                padding: 0;
+
+                a {
+                    color: @base-font-color;
+                    display: block;
+                    padding: 9px 12px;
+
+                    &.active {
+                        color: @background-color-light-second;
+                        background-color: @red;
+
+                        &:hover {
+                            color: @background-color-light-second;
+                        }
+                    }
+
+                    &:hover {
+                        color: @red;
+                        text-decoration: none;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    :global(body.dark) {
+        .mainNav ul {
+            background-color: @background-color-dark;
+        }
+    }
+
+    .mainNav {
+        position: relative;
+
+        ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: -10px;
+            background-color: @background-color-light-second;
+
+            &.show {
+                display: block;
+            }
+
+            li {
+                display: block;
+            }
+        }
+
+        .mabileMainNav {
+            display: block;
+            cursor: pointer;
+        }
+    }
+}
+
+:global(body.menu_top) {
+    .mainNav {
+        display: block;
+    }
+
+    :global(.nav-pane) {
+        display: none;
+    }
+}
+
+:global(body.menu_left) {
+    .mainNav {
+        display: none;
+    }
+}
+
+:global(body.menu_left .warp) {
+    display: flex;
+
+    :global(.nav-pane) {
+        display: block;
+        flex: 0 0 auto;
+        width: 220px;
+    }
+
+    :global(.content-pane) {
+        max-width: calc(100vw - 220px);
+        flex: 1 1 auto;
+        border: 0px;
+    }
+}
+
+:global(body.dark .header) {
+    .mainNav ul li {
+        a {
+            color: @base-font-color-dark;
+
+            &:hover {
+                color: #999;
+            }
+
+            &.active {
+                color: @red;
+            }
+        }
+    }
+}
+
+:global(body.dark .warp) {
+    :global(.nav-pane) {
+        background-color: @background-color-dark-second;
+        color: @foreground-color-dark;
+
+        .sideNav {
+            ul li {
+                a {
+                    color: @foreground-color-dark;
+
+                    &:hover {
+                        color: @red;
+                    }
+
+                    &.active {
+                        color: @foreground-color-dark;
+                        background-color: @red;
+
+                        &:hover {
+                            color: @foreground-color-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

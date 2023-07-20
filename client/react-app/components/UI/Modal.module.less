@@ -1,0 +1,37 @@
+:global(body.dark) {
+    .body {
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background: #999999;
+        }
+    }
+}
+
+.body {
+    white-space: pre-wrap;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #b5b5b5;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(194, 194, 194, 0.5);
+    }
+
+}
+
+.visible {
+    display: table;
+}
+
+.hide {
+    display: none;
+}

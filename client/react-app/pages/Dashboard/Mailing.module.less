@@ -1,0 +1,48 @@
+.textareaWrapper {
+    position: relative;
+    
+    textarea {
+        resize: vertical;
+    }
+
+    .emojiBtn {
+        position: absolute;
+        top:0;
+        width:1.9rem;
+        height:1.9rem;
+        padding: 3px;
+        right:0;
+        border: 2px solid #b5b5b5;
+        cursor: pointer;
+        &:hover {
+            border-color: #30a4dc;
+        }
+    }
+
+}
+
+.preview {
+    min-height:30px;
+    margin-left:auto;
+    position: relative;
+    background-color: #30A4DC;
+    border-radius: 0px 5px 5px 5px;
+    padding: 5px 15px;
+    word-wrap: break-word;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    &:before{
+        position: absolute;
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0px 10px 10px 0;
+        border-color: transparent #30A4DC transparent transparent;
+        top: 0;
+        left: -10px;
+    }
+    a {
+        color:#174E69;
+    }
+}

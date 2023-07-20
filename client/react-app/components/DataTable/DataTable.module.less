@@ -1,0 +1,111 @@
+@import '../../Custom-varibles.less';
+
+:global(body.dark) {
+    .dataTable {
+        .selected {        
+            background-color: #747474 !important;
+            &:hover td {
+                background-color: #747474 !important;
+            }
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topControls {
+    composes: controls;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.bottomControls {
+    composes: controls;
+    margin-top: 20px;
+}
+
+.sorting {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding: 10px 20px 10px 10px;
+    background-image: url("./sort_both.png");
+}
+.sorting_asc {
+    composes: sorting;
+    background-image: url("./sort_asc.png") !important;
+}
+.sorting_desc {
+    composes: sorting;
+    background-image: url("./sort_desc.png") !important;
+}
+.sorting_asc_disabled {
+    composes: sorting;
+    background-image: url("./sort_asc_disabled.png");
+}
+.sorting_desc_disabled {
+    composes: sorting;
+    background-image: url("./sort_desc_disabled.png");
+}
+
+
+.expand {
+    text-align: center;
+    margin-right: 3px;
+    &.open:before {
+        height: 1em;
+        width: 1em;
+        display: inline-block;
+        color: white;
+        border: 0.15em solid white;
+        border-radius: 1em;
+        box-shadow: 0 0 0.2em #444;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.1em;
+        background-color: @green;
+        content: "+";
+    }
+    &.close:before {
+        height: 1em;
+        width: 1em;
+        display: inline-block;
+        color: white;
+        border: 0.15em solid white;
+        border-radius: 1em;
+        box-shadow: 0 0 0.2em #444;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.1em;
+        content: "-";
+        background-color: @red;
+    }
+}
+
+.dataTable {
+    &.table-hover {
+        tbody {
+            tr {
+                cursor: pointer;
+            }
+        } 
+    }
+
+    .selected {
+        background-color: #c2c2c2 !important;
+        &:hover {
+            td {
+                background-color: #c2c2c2 !important;
+            }
+        }
+    }
+}
