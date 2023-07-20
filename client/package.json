@@ -33,7 +33,7 @@
     "webpack-cli": "^5.1.1"
   },
   "scripts": {
-    "dev": "webpack --env NODE_ENV=development --mode development --env PUBLIC_URL=http://bot-admin.local/",
+    "dev": "webpack --env NODE_ENV=development --mode development --env PUBLIC_URL=/",
     "prod": "webpack --env NODE_ENV=production --mode production --env PUBLIC_URL=http://bot-admin.local/",
     "watch": "webpack --progress --watch --env NODE_ENV=development --mode development"
   },

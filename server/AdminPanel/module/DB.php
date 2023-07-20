@@ -11,15 +11,12 @@ class DB
 
     public static function initialize()
     {
-        if (!defined('HOST') || !defined('USER') || !defined('PASSWORD') || !defined('DATABASE') || !defined('PORT') || !defined('CHARSET')) {
-            throw new Exception('Не заданы параметры для подключения к БД (файл config.php)');
-        }
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES ' . CHARSET,
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES ' . $_ENV['DB_CHARSET'],
             PDO::ATTR_EMULATE_PREPARES   => false
         ];
-        self::$pdo = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE . ';charset=' . CHARSET . ';port=' . PORT, USER, PASSWORD, $options);
+        self::$pdo = new PDO('mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_DATABASE'] . ';charset=' . $_ENV['DB_CHARSET'] . ';port=' . $_ENV['DB_PORT'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $options);
     }
 
     public static function __callStatic($method, $args)

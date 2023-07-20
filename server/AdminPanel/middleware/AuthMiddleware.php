@@ -35,7 +35,7 @@ class AuthMiddleware
                 return $this->factory->createResponse(400)->withBody($this->factory->createStream(json_encode(['type' => 'error', 'message' => 'В запросе отсутствует токен'])));
             }
             try {
-                $token = JWT::decode($cookie['jwt'], new Key(KEY, 'HS256'));
+                $token = JWT::decode($cookie['jwt'], new Key($_ENV['KEY'], 'HS256'));
                 $request = $request->withAttribute($this->attribute_name, [$auth, $token->aud]);
                 return $handler->handle($request);
             } catch (ExpiredException $e) {

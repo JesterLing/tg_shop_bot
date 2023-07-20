@@ -1,15 +1,16 @@
 <?php
 require_once '../server/vendor/autoload.php';
-require_once '../config.php';
 
 ini_set('display_errors', 0);
-
 $logger = new Monolog\Logger('admin_panel', [
     (new Monolog\Handler\StreamHandler('../server/adminLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
     (new Monolog\Handler\StreamHandler('php://output', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\JsonFormatter()),
 ]);
-
 Monolog\ErrorHandler::register($logger);
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+$dotenv->required(['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD', 'DB_CHARSET', 'KEY']);
 
 $factory = new GuzzleHttp\Psr7\HttpFactory();
 $request = GuzzleHttp\Psr7\ServerRequest::fromGlobals();

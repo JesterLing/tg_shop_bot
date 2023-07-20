@@ -22,7 +22,6 @@ final class AuthController
 {
 	public function auth(ServerRequest $request, Response $response): Response
 	{
-		if (!defined('KEY')) throw new Exception('Не задан ключ для генерации JWT (файл config.php)');
 		$params = json_decode($request->getBody()->getContents(), true);
 		if (empty($params['secret'])) throw new InvalidArgumentException('Не указан параметр secret');
 
@@ -55,13 +54,12 @@ final class AuthController
 
 	public function refresh(ServerRequest $request, Response $response): Response
 	{
-		if (!defined('KEY')) throw new Exception('Не задан ключ для генерации JWT (файл config.php)');
 		$params = json_decode($request->getBody()->getContents(), true);
 		$cookie = $request->getCookieParams();
 		if (empty($params['refresh'])) throw new InvalidArgumentException('Не указан параметр refresh');
 		if (empty($cookie['jwt'])) throw new Exception('Не найден старый токен', 401);
 		try {
-			$jwt = (array)JWT::decode($cookie['jwt'], new Key(KEY, 'HS256'));
+			$jwt = (array)JWT::decode($cookie['jwt'], new Key($_ENV['KEY'], 'HS256'));
 			throw new InvalidArgumentException('Токен все еще активен');
 		} catch (ExpiredException $e) {
 			$tks = explode('.', $cookie['jwt']);
@@ -82,7 +80,7 @@ final class AuthController
 			'iat' => $time->getTimestamp(),
 			'exp' => $time->modify('+10 minutes')->getTimestamp()
 		];
-		$jwt = JWT::encode($payload, KEY, 'HS256');
+		$jwt = JWT::encode($payload, $_ENV['KEY'], 'HS256');
 		$cookie = new setCookie([
 			'Name' => 'jwt',
 			'Value' => $jwt,

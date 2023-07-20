@@ -1,12 +1,15 @@
 <?php
 require_once '../server/vendor/autoload.php';
-require_once '../config.php';
 
 $logger = new Monolog\Logger('telegram_bot', [
     (new Monolog\Handler\StreamHandler('../server/botLogDebug.log', Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
     (new Monolog\Handler\StreamHandler('../server/botLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
 ]);
 Monolog\ErrorHandler::register($logger);
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+$dotenv->required(['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD', 'DB_CHARSET']);
 
 try {
     $config = AdminPanel\Model\Settings::getAll();
