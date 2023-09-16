@@ -1,0 +1,730 @@
+{
+  "dashboard": {
+    "info": {
+      "bot": "ExampleBot",
+      "nick": "example_bot",
+      "status": "ok",
+      "type": "\u0426\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u0442\u043e\u0432\u0430\u0440\u044b",
+      "created": 1624437003,
+      "lastLogIn": 1683357029
+    },
+    "stats": { "users": 5, "purchases": 7, "goods": 13, "apis": 1869 }
+  },
+  "categories": [
+    {
+      "id": 25,
+      "hide": 0,
+      "name": "Категория 1",
+      "children": [
+        {
+          "id": 26,
+          "hide": 0,
+          "name": "Категория 2",
+          "children": [
+            {
+              "id": 27,
+              "hide": 0,
+              "name": "Категория 3",
+              "children": [{ "id": 28, "hide": 0, "name": "Категория 4" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "hide": 0,
+      "name": "Курсы по PYTHON"
+    },
+    {
+      "id": 1,
+      "hide": 0,
+      "name": "🎬 Online Кинотеатры",
+      "children": [
+        { "id": 2, "hide": 0, "name": "Megogo" },
+        { "id": 3, "hide": 0, "name": "Ivi" },
+        { "id": 4, "hide": 0, "name": "Amediateka" }
+      ]
+    },
+    {
+      "id": 5,
+      "hide": 0,
+      "name": "🔐 VPN",
+      "children": [
+        { "id": 6, "hide": 0, "name": "🌋 Nord VPN" },
+        { "id": 7, "hide": 0, "name": "📡 Windscribe" },
+        { "id": 8, "hide": 0, "name": "💹 IPVanish" }
+      ]
+    },
+    {
+      "id": 9,
+      "hide": 0,
+      "name": "📚 Книжные сервисы",
+      "children": [
+        { "id": 10, "hide": 0, "name": "Litres" },
+        { "id": 11, "hide": 0, "name": "My Book Pro" },
+        { "id": 12, "hide": 1, "name": "Bookmate" }
+      ]
+    },
+    {
+      "id": 13,
+      "hide": 0,
+      "name": "📧 Почта автореги",
+      "children": [
+        { "id": 14, "hide": 0, "name": "🗳 Yahoo" },
+        { "id": 15, "hide": 0, "name": "📭 Hotmail" },
+        { "id": 16, "hide": 0, "name": "📩 Rambler" },
+        { "id": 17, "hide": 0, "name": "📬 Gmail" }
+      ]
+    }
+  ],
+  "goods": [
+    {
+      "id": 1,
+      "cname": "Megogo",
+      "pname": "Megogo [30 дней]",
+      "image": null,
+      "description": "Аккаунты сервиса Megogo с подпиской!",
+      "price": 30,
+      "quantity": 5,
+      "discount": 0,
+      "dis_percent": 0,
+      "hide": 0
+    },
+    {
+      "id": 2,
+      "cname": "Megogo",
+      "pname": "Megogo [60 дней]",
+      "image": null,
+      "description": "Аккаунты сервиса Megogo с подпиской!",
+      "price": 50,
+      "quantity": 10,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 3,
+      "cname": "Megogo",
+      "pname": "Megogo [120+ дней]",
+      "image": null,
+      "description": "Аккаунты сервиса Megogo с подпиской!",
+      "price": 120.5,
+      "quantity": 1,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 4,
+      "cname": "Ivi",
+      "pname": "IVI Premium",
+      "image": null,
+      "description": "Аккаунты с подпиской на разные сроки, и балансами!",
+      "price": 30,
+      "quantity": null,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 1
+    },
+    {
+      "id": 5,
+      "cname": "Amediateka",
+      "pname": "Amediateka [30 дней]",
+      "image": null,
+      "description": "Аккаунты сервиса Amediateka.ru с подпиской!",
+      "price": 300,
+      "quantity": 3,
+      "discount": 1,
+      "dis_percent": 20,
+      "hide": 0
+    },
+    {
+      "id": 6,
+      "cname": "Amediateka",
+      "pname": "Amediateka [6 месяцев]",
+      "image": null,
+      "description": "Аккаунты сервиса Amediateka.ru с подпиской!",
+      "price": 500,
+      "quantity": 2,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 7,
+      "cname": "Nord VPN",
+      "pname": "Nord Unlimited [2024]",
+      "image": null,
+      "description": "Гарантия на весь срок покупки товара!",
+      "price": 25,
+      "quantity": 65,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 8,
+      "cname": "Nord VPN",
+      "pname": "Nord Unlimited [2025]",
+      "image": null,
+      "description": "Гарантия на весь срок покупки товара!",
+      "price": 35,
+      "quantity": 18,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 9,
+      "cname": "Nord VPN",
+      "pname": "Nord Unlimited [2026]",
+      "image": null,
+      "description": "Гарантия на весь срок покупки товара!",
+      "price": 50,
+      "quantity": 72,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 10,
+      "cname": "Курсы по PYTHON",
+      "pname": "NEW Курс Python за 3 дня",
+      "image": "./Upload/63fcadc8da151-1677503944.jpg",
+      "description": null,
+      "price": 3000,
+      "quantity": null,
+      "discount": null,
+      "dis_percent": 40,
+      "hide": 0
+    },
+    {
+      "id": 25,
+      "cname": "Yahoo",
+      "pname": "Yahoo аккаунт",
+      "image": null,
+      "description": "Зарегестрированый на чистый IP. Вы получите аккаунт в формате логин:пароль",
+      "price": 3,
+      "quantity": 121,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 26,
+      "cname": "Hotmail",
+      "pname": "Hotmail аккаунт",
+      "image": null,
+      "description": "Зарегестрированый на чистый IP. Вы получите аккаунт в формате логин:пароль",
+      "price": 3,
+      "quantity": 151,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    },
+    {
+      "id": 27,
+      "cname": "Gmail",
+      "pname": "Gmail аккаунт",
+      "image": null,
+      "description": "Зарегестрированый на чистый IP. Вы получите аккаунт в формате логин:пароль",
+      "price": 5,
+      "quantity": 25,
+      "discount": null,
+      "dis_percent": null,
+      "hide": 0
+    }
+  ],
+  "purch": [
+    {
+      "id": 1,
+      "order_id": 755105,
+      "category": "Amediateka",
+      "product": "Amediateka [30 дней]",
+      "quantity": 5,
+      "discount": 1,
+      "dis_percent": 20,
+      "price": 300,
+      "content_type": "TEXT",
+      "content": "bazikin2@ya.ru:jaber228\nrwerfesr@mail.ru:1111sd134\nsergei2004@gmail.com:zambados2\nlimanosky@hotmail.com:qwertyii\nfotteiko@mail.ru:ggwpsensei\n"
+    },
+    {
+      "id": 2,
+      "order_id": 747129,
+      "category": "Megogo",
+      "product": "Megogo [120+ дней]",
+      "quantity": 3,
+      "discount": null,
+      "dis_percent": null,
+      "price": 120.5,
+      "content_type": "FILE",
+      "content": "bazikin2@ya.ru:jaber228\nrwerfesr@mail.ru:1111sd134\nsergei2004@gmail.com:zambados2\n"
+    },
+    {
+      "id": 3,
+      "order_id": 784661,
+      "category": "Nord VPN",
+      "product": "Nord Unlimited [2024]",
+      "quantity": 1,
+      "discount": null,
+      "dis_percent": null,
+      "price": 25,
+      "content_type": "TEXT",
+      "content": "kotlyarova.lera@mail.ru:Ghdckqcp\n"
+    },
+    {
+      "id": 4,
+      "order_id": 754760,
+      "category": "Nord VPN",
+      "product": "Nord Unlimited [2025]",
+      "quantity": 2,
+      "discount": null,
+      "dis_percent": null,
+      "price": 35,
+      "content_type": "TEXT",
+      "content": "adidas-20119@ya.ru:1234sex\nkysa4ka2010@mail.ru:11110000aaaa\n"
+    },
+    {
+      "id": 5,
+      "order_id": 812067,
+      "category": "Пицца",
+      "product": "Гайвайская",
+      "quantity": 1,
+      "discount": null,
+      "dis_percent": null,
+      "price": 220,
+      "content_type": null,
+      "content": null
+    },
+    {
+      "id": 6,
+      "order_id": 812067,
+      "category": "Пицца",
+      "product": "Маргарита",
+      "quantity": 1,
+      "discount": null,
+      "dis_percent": null,
+      "price": 160,
+      "content_type": null,
+      "content": null
+    },
+    {
+      "id": 6,
+      "order_id": 812067,
+      "category": "Пицца",
+      "product": "Четыре сыра",
+      "quantity": 2,
+      "discount": 2,
+      "dis_percent": 10,
+      "price": 145,
+      "content_type": null,
+      "content": null
+    },
+    {
+      "id": 7,
+      "order_id": 895041,
+      "category": "Курсы по PYTHON",
+      "product": "NEW Курс Python за 3 дня",
+      "quantity": 1,
+      "discount": 1,
+      "dis_percent": 40,
+      "price": 3000,
+      "content_type": "FILE",
+      "content": [
+        {
+          "id": 1,
+          "file_id": "BQACAgIAAxkDAAIdz2RVHE1dS2uKYWvVd-TkpBjDqzdRAAK9LwACs22pSj7-x7gL0Ko5LwQ",
+          "name": "python-part1.zip",
+          "size": "2077664",
+          "path": "./Upload/643d17fed3c49-1681725438.zip",
+          "created_at": "2023-04-17 12:57:18"
+        },
+        {
+          "id": 2,
+          "file_id": "BQACAgIAAxkDAAId0GRVHE7g3ecIiv6ia2Yj_hBLi-owAAK-LwACs22pSsSg40PL8NwLLwQ",
+          "name": "python-part2.zip",
+          "size": "2077664",
+          "path": "./Upload/643d18585d116-1681725528.zip",
+          "created_at": "2023-04-17 12:58:48"
+        },
+        {
+          "id": 3,
+          "file_id": "BQACAgIAAxkDAAId0WRVHFBtkEd926otZInF0raFIWyWAAK_LwACs22pSu0v2LZcUimOLwQ",
+          "name": "python-part3.zip",
+          "size": "2117898",
+          "path": "./Upload/643d18585d650-1681725528.zip",
+          "created_at": "2023-04-17 12:58:48"
+        }
+      ]
+    }
+  ],
+  "payment": [
+    {
+      "id": 1,
+      "user_id": 792211523,
+      "order_id": 812067,
+      "service": 1,
+      "status": 2,
+      "last_check": 1683447931,
+      "additionally": {
+        "id": "715298929_gDiCZAGzVF",
+        "auth": "ok",
+        "error": false,
+        "extra": "",
+        "state": "notpayed",
+        "amount": 1000,
+        "payamount": 1000,
+        "paymethod": null,
+        "created_at": "10:43:25 07.11.22",
+        "expires_at": "12:43:25 07.11.22"
+      }
+    },
+    {
+      "id": 2,
+      "user_id": 792211523,
+      "order_id": 843619,
+      "service": 2,
+      "status": 3,
+      "last_check": 1683447931,
+      "additionally": {
+        "siteId": "9hh4jb-00",
+        "billId": "cc961e8d-d4d6-4f02-b737-2297e51fb48e",
+        "amount": {
+          "currency": "RUB",
+          "value": "150.00"
+        },
+        "status": {
+          "value": "WAITING",
+          "changedDateTime": "2021-01-18T14:22:56.672+03:00"
+        },
+        "customer": {
+          "phone": "78710009999",
+          "email": "test@example.com",
+          "account": "454678"
+        },
+        "comment": "Text comment",
+        "creationDateTime": "2021-01-18T14:22:56.672+03:00",
+        "expirationDateTime": "2025-12-10T09:02:00+03:00",
+        "payUrl": "https://oplata.qiwi.com/form/?invoice_uid=aa0fa2bb-5452-47ca-9190-cd9c1a73718f"
+      }
+    },
+    {
+      "id": 3,
+      "user_id": 792211523,
+      "order_id": 784661,
+      "service": 2,
+      "status": 2,
+      "last_check": 1683447931,
+      "additionally": {
+        "siteId": "9hh4jb-00",
+        "billId": "f7b0fc15-3662-4c87-99b9-b5404620bfdf",
+        "amount": {
+          "currency": "RUB",
+          "value": "150.00"
+        },
+        "status": {
+          "value": "PAID",
+          "changedDateTime": "2021-01-18T14:22:56.672+03:00"
+        },
+        "customer": {
+          "phone": "78710009999",
+          "email": "test@example.com",
+          "account": "454678"
+        },
+        "comment": "Text comment",
+        "creationDateTime": "2021-01-18T14:22:56.672+03:00",
+        "expirationDateTime": "2025-12-10T09:02:00+03:00",
+        "payUrl": "https://oplata.qiwi.com/form/?invoice_uid=aa0fa2bb-5452-47ca-9190-cd9c1a73718f"
+      }
+    },
+    {
+      "id": 5,
+      "user_id": 792211523,
+      "order_id": 747129,
+      "service": 2,
+      "status": 2,
+      "last_check": 1683447931,
+      "additionally": {
+        "siteId": "9hh4jb-00",
+        "billId": "880468bd-a3c0-4368-95cb-4758b5660723",
+        "amount": {
+          "currency": "RUB",
+          "value": "361.5"
+        },
+        "status": {
+          "value": "PAID",
+          "changedDateTime": "2021-01-18T14:22:56.672+03:00"
+        },
+        "customer": {
+          "phone": "78710009999",
+          "email": "test@example.com",
+          "account": "454678"
+        },
+        "comment": "Text comment",
+        "creationDateTime": "2021-01-18T14:22:56.672+03:00",
+        "expirationDateTime": "2025-12-10T09:02:00+03:00",
+        "payUrl": "https://oplata.qiwi.com/form/?invoice_uid=aa0fa2bb-5452-47ca-9190-cd9c1a73718f"
+      }
+    },
+    {
+      "id": 6,
+      "user_id": null,
+      "order_id": 834634,
+      "service": 2,
+      "status": 6,
+      "last_check": 1683447931,
+      "additionally": {
+        "siteId": "9hh4jb-00",
+        "billId": "a851dbf4-4f1b-4fb8-b975-ccc30affcd0f",
+        "amount": {
+          "currency": "RUB",
+          "value": "200.00"
+        },
+        "status": {
+          "value": "REJECTED",
+          "changedDateTime": "2021-01-18T14:22:56.672+03:00"
+        },
+        "customer": {
+          "phone": "78710009999",
+          "email": "test@example.com",
+          "account": "454678"
+        },
+        "comment": "Text comment",
+        "creationDateTime": "2021-01-18T14:22:56.672+03:00",
+        "expirationDateTime": "2025-12-10T09:02:00+03:00",
+        "payUrl": "https://oplata.qiwi.com/form/?invoice_uid=aa0fa2bb-5452-47ca-9190-cd9c1a73718f"
+      }
+    },
+    {
+      "id": 4,
+      "user_id": null,
+      "order_id": 754760,
+      "service": 1,
+      "status": 2,
+      "last_check": 1683447931,
+      "additionally": {
+        "id": "715298929_gDiCZAGzVF",
+        "auth": "ok",
+        "error": false,
+        "extra": "",
+        "state": "payed",
+        "amount": 70,
+        "payamount": 70,
+        "paymethod": "Card RUB P2P",
+        "created_at": "10:43:25 07.11.22",
+        "expires_at": "12:43:25 07.11.22"
+      }
+    }
+  ],
+  "getPurchases": [
+    {
+      "id": 812067,
+      "user": {
+        "user_id": 749587354,
+        "username": null,
+        "first_name": "Real Product Test",
+        "last_name": null
+      },
+      "number": "+380502856229",
+      "delivery": true,
+      "address": "ул. Вадима Гетьмана, 30-Б кв 12",
+      "sum": 640,
+      "date": 1683447931,
+      "payment": { "id": 1, "service": "Crystalpay", "status": 3 }
+    },
+    {
+      "id": 843619,
+      "user": {
+        "user_id": 749587354,
+        "username": "test",
+        "first_name": null,
+        "last_name": null
+      },
+      "number": "+79154108972",
+      "delivery": null,
+      "address": null,
+      "sum": 150,
+      "date": 1683447131,
+      "payment": { "id": 2, "service": "QIWI", "status": 3 }
+    },
+    {
+      "id": 784661,
+      "user": {
+        "user_id": 123456789,
+        "first_name": "Mikel",
+        "last_name": "Stroke",
+        "username": "unowphobic"
+      },
+      "number": "+79154108972",
+      "delivery": null,
+      "address": null,
+      "sum": 25,
+      "date": 1682686197,
+      "payment": { "id": 3, "service": "QIWI", "status": 2 }
+    },
+    {
+      "id": 747129,
+      "user": {
+        "user_id": 385903856,
+        "first_name": "SimonGold",
+        "last_name": null,
+        "username": "Lustar"
+      },
+      "number": "+79154108972",
+      "delivery": null,
+      "address": null,
+      "sum": 361.5,
+      "date": 1683120743,
+      "payment": { "id": 5, "service": "QIWI", "status": 2 }
+    },
+    {
+      "id": 834634,
+      "user": {
+        "user_id": 763951064,
+        "first_name": "Secondadmin",
+        "last_name": null,
+        "username": "yoloboy"
+      },
+      "number": "+79154108972",
+      "delivery": null,
+      "address": null,
+      "sum": 200,
+      "date": 1683120743,
+      "payment": { "id": 6, "service": "QIWI", "status": 6 }
+    },
+    {
+      "id": 754760,
+      "user": {
+        "user_id": 123456789,
+        "username": "unowphobic",
+        "first_name": "Mikel",
+        "last_name": "Stroke"
+      },
+      "number": "+380512476255",
+      "delivery": null,
+      "address": null,
+      "sum": 70,
+      "date": 1683120143,
+      "payment": { "id": 4, "service": "Crystalpay", "status": 2 }
+    },
+    {
+      "id": 755105,
+      "user": {
+        "user_id": 665695764,
+        "username": "dan4lik",
+        "first_name": "Daniel",
+        "last_name": "Andre"
+      },
+      "number": "+380399377268",
+      "delivery": null,
+      "address": null,
+      "sum": 1380,
+      "date": 1658927316,
+      "payment": { "id": 1, "service": "Coinbase", "status": 2 }
+    },
+    {
+      "id": 895041,
+      "user": {
+        "user_id": 665695764,
+        "username": "test",
+        "first_name": null,
+        "last_name": null
+      },
+      "number": "+380399377268",
+      "delivery": null,
+      "address": null,
+      "sum": 3000,
+      "date": 1658927316,
+      "payment": { "id": 1, "service": "Coinbase", "status": 2 }
+    }
+  ],
+  "settings": {
+    "bot_username": "example_bot",
+    "type": 1,
+    "greetings": "hello gyus",
+    "success_order": "thx",
+    "service": 0,
+    "currency": 980,
+    "pay_delivery": 1,
+    "pay_qiwi": 1,
+    "pay_crystalpay": 1,
+    "pay_coinbase": 0,
+    "api_key": "MTEwMjAxNTQzOkFBSGRxVGN2Q0gxdkdXSnhmU2VvZlNBczBLNVBBTERzYXc=",
+    "crystalpay_login": "testname",
+    "crystalpay_key": "aE1yajk3VXlMdHozTjdNU3ZMTUhrd3hmMnlmckhYQ3E=",
+    "qiwi_private_key": "TkFkSjFBSEQ0bDN6SjFCcGFzSWJuSllVY3ZkN0hZMTB6TW43Yml0cWEzbjdFQzhtQkJOY01MQlBzRlhkTnl5YgpsTXJRVzFhTmVJZzM5YUlHV3l1N0F2VDh3OVpyVjJOTwpVTnRDVXFDVzZEcmF4eUl4S01LUkllOXpCTGVhZ1lxUApFbmpyWW9LbmIxNk9xNWpUekJ5RkpBb2h6bkFybnFLOApqd0pRd2c1dWVqVlBCeXVYWVNMajlMVkc3MGhEN3NqawoxUGE5aVlyOHhhRlFUUDk2WVZDZDVOU05WdEJjQjVERA==",
+    "coinbase_key": "bnBnZksxSjlPZjA0S2VwYzBmMU9WSWUxYUt2Yk1lSGJkWmZvZzl6dg=="
+  },
+  "getUsers": [
+    {
+      "id": 684218421,
+      "first_name": "demo",
+      "last_name": "admin",
+      "username": "demoadmin",
+      "balance": 1843,
+      "language_code": "ru",
+      "is_premium": null,
+      "created_at": "2022-07-05 13:54:17",
+      "updated_at": "2023-05-06 10:10:19"
+    },
+    {
+      "id": 763951064,
+      "first_name": "Secondadmin",
+      "last_name": null,
+      "username": "yoloboy",
+      "balance": null,
+      "language_code": null,
+      "is_premium": null,
+      "created_at": "2022-07-06 16:01:09",
+      "updated_at": "2023-05-05 20:11:51"
+    },
+    {
+      "id": 665695764,
+      "first_name": "Daniel",
+      "last_name": "Andre",
+      "username": "dan4lik",
+      "balance": null,
+      "language_code": null,
+      "is_premium": null,
+      "created_at": "2022-07-06 16:01:09",
+      "updated_at": "2023-05-05 20:11:51"
+    },
+    {
+      "id": 123456789,
+      "first_name": "Mikel",
+      "last_name": "Stroke",
+      "username": "unowphobic",
+      "balance": null,
+      "language_code": null,
+      "is_premium": null,
+      "created_at": "2022-07-06 16:01:09",
+      "updated_at": "2023-05-05 20:11:51"
+    },
+    {
+      "id": 385903856,
+      "first_name": "SimonGold",
+      "last_name": null,
+      "username": "Lustar",
+      "balance": null,
+      "language_code": null,
+      "is_premium": null,
+      "created_at": "2022-07-06 16:01:09",
+      "updated_at": "2023-05-05 20:11:51"
+    },
+    {
+      "id": 749587354,
+      "username": "test",
+      "first_name": null,
+      "last_name": null,
+      "balance": null,
+      "language_code": null,
+      "is_premium": null,
+      "created_at": "2022-07-06 16:01:09",
+      "updated_at": "2023-05-05 20:11:51"
+    }
+  ],
+  "getAdmins": [
+    { "user_id": 684218421, "path": "./Download/photos/file_0.jpg", "created_at": 1682517447 }
+  ]
+}
