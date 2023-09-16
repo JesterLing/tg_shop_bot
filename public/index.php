@@ -3,7 +3,7 @@ require_once '../server/vendor/autoload.php';
 
 ini_set('display_errors', 0);
 $logger = new Monolog\Logger('admin_panel', [
-    (new Monolog\Handler\StreamHandler('../server/adminLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+    (new Monolog\Handler\StreamHandler('../server/logs/adminLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
     (new Monolog\Handler\StreamHandler('php://output', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\JsonFormatter()),
 ]);
 Monolog\ErrorHandler::register($logger);
@@ -57,6 +57,7 @@ $routes->post('/settings', [AdminPanel\Endpoints\SettingsController::class, 'sav
 $routes->get('/settings/admins', [AdminPanel\Endpoints\SettingsController::class, 'getAdmins']);
 $routes->post('/settings/admins', [AdminPanel\Endpoints\SettingsController::class, 'addAdmin']);
 $routes->delete('/settings/admins', [AdminPanel\Endpoints\SettingsController::class, 'delAdmin']);
+
 
 $dispatcherMiddleware = new mindplay\middleman\Dispatcher(
     [

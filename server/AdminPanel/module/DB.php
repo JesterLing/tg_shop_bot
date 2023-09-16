@@ -3,7 +3,6 @@
 namespace AdminPanel\Module;
 
 use \PDO;
-use \Exception;
 
 class DB
 {

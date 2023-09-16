@@ -1,12 +1,12 @@
 .vscode
-/config.php
 .env
+.htaccess
 /ToDo.txt
 
 ssl/
 
 server/vendor/
-server/*.log
+server/logs/
 
 public/dist/
 public/Download/

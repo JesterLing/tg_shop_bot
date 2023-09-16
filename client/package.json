@@ -3,6 +3,7 @@
     "@emoji-mart/react": "^1.1.1",
     "@hookform/resolvers": "^3.0.1",
     "async-mutex": "^0.4.0",
+    "dotenv": "^16.3.1",
     "emoji-mart": "^5.5.2",
     "petal.less": "^0.12.4",
     "react": "^18.2.0",
@@ -33,8 +34,8 @@
     "webpack-cli": "^5.1.1"
   },
   "scripts": {
-    "dev": "webpack --env NODE_ENV=development --mode development --env PUBLIC_URL=/",
-    "prod": "webpack --env NODE_ENV=production --mode production --env PUBLIC_URL=http://bot-admin.local/",
+    "dev": "webpack --env NODE_ENV=development --mode development",
+    "prod": "webpack --env NODE_ENV=production --mode production",
     "watch": "webpack --progress --watch --env NODE_ENV=development --mode development"
   },
   "browserslist": {

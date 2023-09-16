@@ -1,20 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isAuth: true,
-  user: {
-    user_id: 1,
-    first_name: 'demo',
-    last_name: 'admin',
-    username: 'demoadmin',
-    photo: './Download/photos/file_0.jpg'
-  },
+  isAuth: false,
+  user: null,
   themeDark: false,
   menuFull: false,
-  configs: {
-    currency: 'грн',
-    type: 1
-  },
+  configs: { type: null, currency: null },
   refreshToken: null,
   uploadProgress: 0
 };

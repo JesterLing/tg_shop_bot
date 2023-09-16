@@ -2,11 +2,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const dotenv = require('dotenv').config({ path: '../.env' }); 
 
 module.exports = (env, argv) => {
   const devMode = argv.mode === 'development';
   let config = {
-    entry: path.resolve(__dirname, 'react-app', 'app.jsx'),
+    entry: './react-app/App.jsx',
     output: {
       path: path.resolve(__dirname, '../public', 'dist'),
       clean: devMode ? false : true

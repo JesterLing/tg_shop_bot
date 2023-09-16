@@ -2,14 +2,14 @@
 require_once '../server/vendor/autoload.php';
 
 $logger = new Monolog\Logger('telegram_bot', [
-    (new Monolog\Handler\StreamHandler('../server/botLogDebug.log', Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
-    (new Monolog\Handler\StreamHandler('../server/botLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+    (new Monolog\Handler\StreamHandler('../server/logs/botLogDebug.log', Monolog\Logger::DEBUG))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
+    (new Monolog\Handler\StreamHandler('../server/logs/botLogError.log', Monolog\Logger::ERROR))->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true)),
 ]);
 Monolog\ErrorHandler::register($logger);
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
-$dotenv->required(['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD', 'DB_CHARSET']);
+$dotenv->required(['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD', 'DB_CHARSET', 'KEY']);
 
 try {
     $config = AdminPanel\Model\Settings::getAll();
@@ -21,7 +21,7 @@ try {
     //$telegram->enableAdmins($config['admins']);
 
     // Add commands paths containing your custom commands
-    $telegram->addCommandsPaths(['../server/botCommands']);
+    $telegram->addCommandsPath('../server/BotCommands');
 
     // Enable MySQL if required
     $telegram->enableExternalMySql(AdminPanel\Module\DB::getPdo());

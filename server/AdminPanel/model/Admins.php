@@ -59,6 +59,15 @@ class Admins
         return $sth->execute();
     }
 
+    public static function editByID(int $user_id, string $secret, string $expired)
+    {
+        $sth = DB::prepare('UPDATE `admins` SET `secret` = ?, `secret_expired` = ?, refresh_token = null WHERE `user_id` = ?');
+        $sth->bindValue(1, $secret, PDO::PARAM_STR);
+        $sth->bindValue(2, $expired, PDO::PARAM_STR);
+        $sth->bindValue(3, $user_id, PDO::PARAM_INT);
+        return $sth->execute();
+    }
+
     public static function editRefreshByID(string $token, int $id)
     {
         $sth = DB::prepare(

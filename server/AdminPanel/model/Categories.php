@@ -79,7 +79,7 @@ class Categories
     private static function getMaxOrder(): int
     {
         $sth = DB::query('SELECT MAX(`order`) + 1 FROM `categories` WHERE `parent_id` IS NULL')->fetch();
-        if (empty($sth)) return 0;
+        if (is_null($sth[0])) return 0;
         else return $sth[0];
     }
 

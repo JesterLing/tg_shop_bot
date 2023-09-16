@@ -8,8 +8,7 @@ use Longman\TelegramBot\Exception\TelegramException;
 
 use Longman\TelegramBot\Entities\InlineKeyboard;
 
-use Longman\TelegramBot\DB;
-use PDO;
+use AdminPanel\Model\Admins;
 
 class AdminCommand extends SystemCommand
 {
@@ -21,8 +20,10 @@ class AdminCommand extends SystemCommand
 
     public function execute(): ServerResponse
     {
-        $admin_id = $this->getMessage()->getFrom()->getId(); // check for admin
-        $secret = $this->generateAuthCode($admin_id);
+        $user_id = $this->getMessage()->getFrom()->getId();
+        $admin = Admins::getByID($user_id);
+        if (!empty($admin)) return $this->replyToChat('У вас нет прав администратора');
+        $secret = $this->generateAuthCode($user_id);
         $url = $this->generateAuthLink($secret);
 
         return $this->replyToChat('Ссылка для входа в админку (действительна 5 минут)', [
@@ -37,17 +38,15 @@ class AdminCommand extends SystemCommand
     {
         $secret = bin2hex(random_bytes(5));
         $exp = (new \DateTimeImmutable())->modify('+5 minutes')->format('Y-m-d H:i:s');
-        DB::getPdo()->prepare('UPDATE `admins` SET `secret` = ?, `secret_expired` = ?, refresh_token = null WHERE `user_id` = ?')->execute([$secret, $exp, $user_id]);
+        Admins::editByID($user_id, $secret, $exp);
         return $secret;
     }
 
     private function generateAuthLink($secret)
     {
-        $url = '';
-        if (isset($_SERVER["HTTPS"])) $url .= 'https://';
-        else $url .= 'http://';
-        $url .= $_SERVER['SERVER_NAME'] . '/auth/' . $secret;
-        //return $url;
-        return 'http://bot-admin.local/auth/' . $secret;
+        if (substr($_ENV['APP_URL'], -1) == '/') $url = $_ENV['APP_URL'];
+        else $url = $_ENV['APP_URL'] . '/';
+        $url = $url . 'auth/' . $secret;
+        return $url;
     }
 }

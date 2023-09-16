@@ -42,9 +42,18 @@ final class FirstStartController
         if (!$config['first_start']) return $response->withBody(Utils::streamFor(json_encode(['type' => 'redirect'])));
         if ($params['step'] == 1) {
             if (empty($params['bot_username'] || empty($params['api_key']))) throw new InvalidArgumentException('Не найден параметр admins');
-
-            Settings::saveOnly(['bot_username' => $params['bot_username'], 'api_key' => $params['api_key']]);
-            $response->getBody()->write(json_encode(['type' => 'success']));
+            $telegram = new \Longman\TelegramBot\Telegram($params['api_key'], $params['bot_username']);
+            if (substr($_ENV['APP_URL'], -1) == '/') $url = $_ENV['APP_URL'];
+            else $url = $_ENV['APP_URL'] . '/';
+            $url = $url . 'hook.php';
+            $url = preg_replace('/^http:/i', 'https:', $url);
+            $result = $telegram->setWebhook($url, ['certificate' => '../ssl/public.pem']);
+            if ($result->isOk()) {
+                Settings::saveOnly(['bot_username' => $params['bot_username'], 'api_key' => $params['api_key']]);
+                $response->getBody()->write(json_encode(['type' => 'success']));
+            } else {
+                $response->getBody()->write(json_encode(['type' => 'error', 'message' => 'Ошибка при попытке установить Webhook']));
+            }
             return $response;
         } else if ($params['step'] == 2) {
             if (empty($params['admins'])) throw new InvalidArgumentException('Не найден параметр admins');

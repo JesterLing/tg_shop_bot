@@ -1,0 +1,46 @@
+version: '3'
+services:
+  nginx:
+    image: 'nginx:alpine'
+    container_name: nginx
+    restart: on-failure
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - php
+    volumes:
+      - www:/var/www
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+      - ./server/logs:/var/log/nginx
+  php:
+    build:
+      dockerfile: 'docker/php/Dockerfile'
+      context: '.'
+      args:
+        APP_URL: ${APP_URL}
+    container_name: php
+    restart: on-failure
+    links:
+      - mysql
+    volumes:
+      - www:/var/www
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./server/logs:/var/www/server/logs
+  mysql:
+    image: 'mysql:latest'
+    container_name: mysql
+    restart: on-failure
+    environment:
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db:/var/lib/mysql
+      - ./server/import:/docker-entrypoint-initdb.d
+volumes:
+  www:
+    driver: local
+  db:
+    driver: local
